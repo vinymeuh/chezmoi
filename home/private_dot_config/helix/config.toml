@@ -1,0 +1,36 @@
+[editor]
+auto-pairs = false
+cursorline = true
+rulers = [80, 120]
+text-width = 120
+
+[editor.cursor-shape]
+insert = "underline"
+normal = "block"
+select = "block"
+
+[editor.indent-guides]
+render = true
+character = '|'
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-modification-indicator", "file-name", "file-type", "file-encoding", "file-line-ending"] 
+right = ["diagnostics", "version-control", "selections", "position", "position-percentage"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.whitespace.render]
+space = "all"
+newline = "all"
+
+[editor.whitespace.characters]
+space = "."
+newline = "⏎"
+
+[keys.normal]
+C-s = ":w" # Save file with Ctrl-s
