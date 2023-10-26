@@ -1,8 +1,13 @@
 local wezterm = require 'wezterm'
+local project = require 'project'
 
 local config = {}
 -- Use config_builder if available
 if wezterm.config_builder then config = wezterm.config_builder() end
+
+wezterm.on("gui-startup", function()
+  project.startup("WZ_PROJECT", "projects", wezterm)
+end)
 
 -- GPU
 config.front_end = 'WebGpu'
