@@ -1,13 +1,14 @@
+theme = "zed_onelight"
+
 [editor]
-auto-pairs = false
 cursorline = true
 rulers = [80, 120]
 text-width = 120
 
 [editor.cursor-shape]
-insert = "underline"
+insert = "bar"
 normal = "block"
-select = "block"
+select = "underline"
 
 [editor.indent-guides]
 render = true
@@ -25,7 +26,6 @@ mode.insert = "INSERT"
 mode.select = "SELECT"
 
 [editor.whitespace.render]
-space = "all"
 newline = "all"
 
 [editor.whitespace.characters]
