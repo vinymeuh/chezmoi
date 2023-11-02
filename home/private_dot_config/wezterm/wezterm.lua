@@ -8,9 +8,6 @@ if wezterm.config_builder then config = wezterm.config_builder() end
 
 wezterm.on("gui-startup", function(cmd)
   project.startup("WZ_PROJECT", "projects", wezterm)
-  local _, pane, _ = mux.spawn_window({})
-  pane:send_text 'chezmoi status\n'
-
 end)
 
 -- GPU

@@ -48,3 +48,6 @@ alias cdw='cd ~/Work4Me'
 
 # zsh-autosuggestions plugin
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# chezmoi
+[ -x /usr/bin/chezmoi ] && /usr/bin/chezmoi status
