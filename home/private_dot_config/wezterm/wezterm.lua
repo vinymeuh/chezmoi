@@ -19,7 +19,7 @@ config.animation_fps = 10
 config.color_scheme = 'Tokyo Night'
 config.window_background_opacity = 0.9
 config.font = wezterm.font_with_fallback({
-  { family = "IosevkaTerm Nerd Font", scale = 1.1}
+  { family = "IosevkaTerm NF", scale = 1.1}
 })
 
 -- Tab bar
