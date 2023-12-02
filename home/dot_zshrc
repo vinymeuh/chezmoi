@@ -8,6 +8,7 @@ export PROMPT="%F{220}%n@%m %1~ %#%f "
 
 export EDITOR=vim
 export PAGER=less
+export LESS=-R
 
 # PATH
 typeset -U path
@@ -26,7 +27,11 @@ export PYENV_ROOT=$HOME/.pyenv
 path=("$PYENV_ROOT/bin" $path)
 eval "$(pyenv init -)"
 
+# opam configuration
+[[ ! -r /home/viny/.opam/opam-init/init.zsh ]] || source /home/viny/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
 # aliases & functions
+alias cm='chezmoi'
 alias cp='cp -i'
 alias df='df -PH'
 alias h='history'
@@ -51,3 +56,4 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # chezmoi
 [ -x /usr/bin/chezmoi ] && /usr/bin/chezmoi status
+
