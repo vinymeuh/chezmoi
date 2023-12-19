@@ -4,8 +4,7 @@ theme = "ayu_light"
 bufferline = "multiple"
 cursorline = true
 line-number = "relative"
-rulers = [80, 120]
-text-width = 120
+rulers = [120]
 
 [editor.cursor-shape]
 insert = "bar"
