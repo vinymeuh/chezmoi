@@ -46,8 +46,6 @@ alias hx='helix'
 alias radiogaga='ncmpcpp -h radiogaga.home'
 alias vi='vim'
 
-alias cdw='cd ~/Work4Me'
-
 # zsh-autosuggestions plugin
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
