@@ -44,7 +44,7 @@ alias confdiff='cd ~/conf-nyx && git diff'
 alias code='~/Applications/VSCode-linux-x64/bin/code --disable-gpu'
 alias hx='helix'
 alias radiogaga='ncmpcpp -h radiogaga.home'
-alias vi='vim'
+alias vi='nvim --clean'
 
 # zsh-autosuggestions plugin
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
