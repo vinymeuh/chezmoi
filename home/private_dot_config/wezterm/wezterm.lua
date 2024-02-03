@@ -1,14 +1,13 @@
 local wezterm = require 'wezterm'
-local project = require 'project'
 local mux = wezterm.mux
 local config = {}
 
 -- Use config_builder if available
 if wezterm.config_builder then config = wezterm.config_builder() end
 
-wezterm.on("gui-startup", function(cmd)
-  project.startup("WZ_PROJECT", "projects", wezterm)
-end)
+-- Window size for newly created windows
+config.initial_cols = 120
+config.initial_rows = 24
 
 -- GPU
 config.front_end = 'WebGpu'
@@ -16,10 +15,11 @@ config.webgpu_power_preference = 'HighPerformance'
 config.animation_fps = 10
 
 -- Colors & Appearance
-config.color_scheme = 'Tokyo Night'
+config.color_scheme = 'Gruvbox Dark (Gogh)'
 config.window_background_opacity = 0.9
+config.font_size = 11.0
 config.font = wezterm.font_with_fallback({
-  { family = "IosevkaTerm NF", scale = 1 }
+  'JetBrains Mono',
 })
 
 -- Tab bar
