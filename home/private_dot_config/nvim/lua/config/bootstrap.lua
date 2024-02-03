@@ -19,15 +19,15 @@ vim.opt.number = true               -- print the line number in front of each li
 vim.opt.relativenumber = true       -- show relative line number in front of each line
 vim.opt.ruler = true                -- show cursor line and column in the status line  
 vim.opt.scrolloff = 8               -- minimum nr. of lines above and below cursor
-vim.opt.shiftwidth = 3              -- number of spaces to use for (auto)indent step
+vim.opt.shiftwidth = 2              -- number of spaces to use for (auto)indent step
 vim.opt.showtabline = 1             -- tells when the tab pages line is displayed
 vim.opt.signcolumn = "yes"          -- when and how to display the sign column
 vim.opt.smartindent = true          -- smart autoindenting for C programs
-vim.opt.softtabstop = 3             -- number of spaces that <Tab> uses while editing
+vim.opt.softtabstop = 2             -- number of spaces that <Tab> uses while editing
 vim.opt.splitbelow = true           -- new window from split is below the current one
 vim.opt.splitright = true           -- new window from vsplit is put right of the current one
 vim.opt.swapfile = false            -- whether to use a swapfile for a buffer
-vim.opt.tabstop = 3                 -- number of spaces that <Tab> in file uses
+vim.opt.tabstop = 2                 -- number of spaces that <Tab> in file uses
 vim.opt.termguicolors = true        -- set term gui colors (most terminals support this)
 vim.opt.title = false               -- let Vim set the title of the window
 vim.opt.timeoutlen = 500            -- time in milliseconds to wait for a mapped sequence to complete (useful for which-key too)
@@ -52,4 +52,22 @@ vim.keymap.set("n", "<m-w>", "<C-w>w", opts)
 
 vim.keymap.set("x", "p", [["_dP]])  -- don't replace buffer after pasting
 vim.keymap.set("n", "Q", "<Nop>", opts) -- disable mapping to execute last macro recorded
+
+--- User commands --------------------------------------------------------------
+vim.api.nvim_create_user_command('Darkmode',
+  function(opts)
+    if opts.fargs[1] == "on" then
+      vim.o.background = "dark"
+    elseif opts.fargs[1] == "off" then
+      vim.o.background = "light"
+    else
+      error("Usage: Darkmode on|off")
+    end
+  end,
+  { nargs = 1,
+    complete = function(ArgLead, CmdLine, CursorPos)
+      return { "on", "off" }
+    end
+  }
+)
 
