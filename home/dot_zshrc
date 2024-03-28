@@ -14,12 +14,15 @@ export LESS=-FR
 typeset -U path
 path=("$HOME/conf-nyx/bin" "$HOME/bin" '/usr/local/bin' $path)
 [ -d "$HOME/.cargo/bin" ] && path=("$HOME/.cargo/bin" $path)
-if [ -d "$HOME/go/current" ]; then
-    export GOROOT="$HOME/go/current"
-    export GOPATH="$HOME/go"
+if [ -d "$HOME/Lang/go/current" ]; then
+    export GOROOT="$HOME/Lang/go/current"
+    export GOPATH="$HOME/Lang/go"
     path=("$GOPATH/bin" "$GOROOT/bin" $path)
 fi
-[ -d "$HOME/Lang/zig/current" ] && path=("$HOME/Lang/zig/current" "$HOME/Lang/zig/zls/zig-out/bin" $path)
+if [ -d "$HOME/Lang/zig/current" ]; then
+    path=("$HOME/Lang/zig/current" "$HOME/Lang/zig/zls/zig-out/bin" $path)
+    alias zbr='zig build run'
+fi
 export PATH
 
 # pyenv
