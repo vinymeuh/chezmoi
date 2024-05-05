@@ -39,21 +39,15 @@ config.keys = {
   -- Copy/Paste
   { key = 'c', mods = 'CTRL|SHIFT', action = wezterm.action.CopyTo 'Clipboard' },
   { key = 'v', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
-  -- Split
-  { key = 'h', mods = 'CTRL|SHIFT|ALT', action = wezterm.action({ SplitHorizontal = {domain="CurrentPaneDomain"} })},
-  { key = 'v', mods = 'CTRL|SHIFT|ALT', action = wezterm.action({ SplitVertical = {domain="CurrentPaneDomain"} })},
-  { key = 'UpArrow', mods = 'CTRL|SHIFT', action = wezterm.action. ActivatePaneDirection 'Up' },
-  { key = "DownArrow", mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection="Down" })},
-  { key = "LeftArrow", mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection="Left" })},
-  { key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action({ ActivatePaneDirection="Right" })},
-  { key = 'z', mods = 'CTRL|SHIFT', action = wezterm.action.TogglePaneZoomState },
   -- Tabs
   { key = 't', mods = "CTRL", action = wezterm.action({ SpawnTab = "CurrentPaneDomain"} )},
   { key = "Tab", mods = "CTRL", action = wezterm.action({ ActivateTabRelative = 1 } )},
-  { key = "Tab", mods = "CTRL|SHIFT", action = wezterm.action({ ActivateTabRelative = -1 } )},
+  -- Window
+  { key = "n", mods = "CTRL", action = wezterm.action.SpawnWindow },
 }
 
 -- Misc
 config.check_for_updates = false
+config.warn_about_missing_glyphs = false
 
 return config
