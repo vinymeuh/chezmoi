@@ -1,6 +1,6 @@
 local M = {
-   "numToStr/Comment.nvim",
-   event = false,
+  "numToStr/Comment.nvim",
+  event = false,
 }
 
 function M.config()

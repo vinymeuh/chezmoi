@@ -1,14 +1,14 @@
--- ███    ██ ███████  ██████  ██    ██ ██ ███    ███ 
--- ████   ██ ██      ██    ██ ██    ██ ██ ████  ████ 
--- ██ ██  ██ █████   ██    ██ ██    ██ ██ ██ ████ ██ 
--- ██  ██ ██ ██      ██    ██  ██  ██  ██ ██  ██  ██ 
--- ██   ████ ███████  ██████    ████   ██ ██      ██ 
+-- ███    ██ ███████  ██████  ██    ██ ██ ███    ███
+-- ████   ██ ██      ██    ██ ██    ██ ██ ████  ████
+-- ██ ██  ██ █████   ██    ██ ██    ██ ██ ██ ████ ██
+-- ██  ██ ██ ██      ██    ██  ██  ██  ██ ██  ██  ██
+-- ██   ████ ███████  ██████    ████   ██ ██      ██
 
 require "config.bootstrap"
 -------------------------------------------------------------------------------
 LAZY_PLUGINS_SPECS = {}
 local lazyadd = function(spec)
-   table.insert(LAZY_PLUGINS_SPECS, { import = spec })
+  table.insert(LAZY_PLUGINS_SPECS, { import = spec })
 end
 lazyadd "config.colorschemes.gruvbox"
 lazyadd "config.plugins.which-key"
@@ -22,4 +22,6 @@ lazyadd "config.plugins.lualine"
 lazyadd "config.plugins.comment"
 lazyadd "config.plugins.autopairs"
 lazyadd "config.plugins.oil"
+lazyadd "config.plugins.conform"
+lazyadd "config.plugins.trouble"
 require "config.lazy"

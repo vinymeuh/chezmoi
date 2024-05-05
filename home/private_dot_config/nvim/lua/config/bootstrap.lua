@@ -8,8 +8,7 @@ vim.g.maplocalleader = " "
 vim.opt.backup = false              -- keep backup file after overwriting a file
 vim.opt.clipboard = "unnamedplus"   -- allows neovim to access the system clipboard
 vim.opt.cursorline = true           -- highlight the current line
-vim.opt.cmdheight = 1               -- number of lines to use for the command-line 
-vim.opt.expandtab = true            -- use spaces when <Tab> is inserted
+vim.opt.cmdheight = 1               -- number of lines to use for the command-line
 vim.opt.guicursor = "n-v-c-i:block" -- always use fat cursor
 vim.opt.hlsearch = false            -- highlight matches with last search pattern
 vim.opt.ignorecase = false          -- ignore case in search patterns
@@ -17,17 +16,14 @@ vim.opt.incsearch = true            -- highlight match while typing search patte
 vim.opt.laststatus = 3              -- tells when last window has status lines
 vim.opt.number = true               -- print the line number in front of each line
 vim.opt.relativenumber = true       -- show relative line number in front of each line
-vim.opt.ruler = true                -- show cursor line and column in the status line  
+vim.opt.ruler = true                -- show cursor line and column in the status line
 vim.opt.scrolloff = 8               -- minimum nr. of lines above and below cursor
-vim.opt.shiftwidth = 2              -- number of spaces to use for (auto)indent step
 vim.opt.showtabline = 1             -- tells when the tab pages line is displayed
 vim.opt.signcolumn = "yes"          -- when and how to display the sign column
 vim.opt.smartindent = true          -- smart autoindenting for C programs
-vim.opt.softtabstop = 2             -- number of spaces that <Tab> uses while editing
 vim.opt.splitbelow = true           -- new window from split is below the current one
 vim.opt.splitright = true           -- new window from vsplit is put right of the current one
 vim.opt.swapfile = false            -- whether to use a swapfile for a buffer
-vim.opt.tabstop = 2                 -- number of spaces that <Tab> in file uses
 vim.opt.termguicolors = true        -- set term gui colors (most terminals support this)
 vim.opt.title = false               -- let Vim set the title of the window
 vim.opt.timeoutlen = 500            -- time in milliseconds to wait for a mapped sequence to complete (useful for which-key too)
@@ -39,18 +35,20 @@ vim.g.netrw_banner = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
-vim.g.loaded_ruby_provider= 0
+vim.g.loaded_ruby_provider = 0
+
+--- Spaces/Tab war -------------------------------------------------------------
+vim.opt.expandtab = true -- use spaces when <Tab> is inserted
+vim.opt.shiftwidth = 2   -- number of spaces to use for (auto)indent step
+vim.opt.softtabstop = 2  -- number of spaces that <Tab> uses while editing
+vim.opt.tabstop = 2      -- number of spaces that <Tab> in file uses
+
+vim.cmd("autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4")
 
 --- Keymaps --------------------------------------------------------------------
 local opts = { silent = true }
--- Better window navigation using <ALT>
-vim.keymap.set("n", "<m-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<m-j>", "<C-w>j", opts)
-vim.keymap.set("n", "<m-k>", "<C-w>k", opts)
-vim.keymap.set("n", "<m-l>", "<C-w>l", opts)
-vim.keymap.set("n", "<m-w>", "<C-w>w", opts)
 
-vim.keymap.set("x", "p", [["_dP]])  -- don't replace buffer after pasting
+vim.keymap.set("x", "p", [["_dP]])      -- don't replace buffer after pasting
 vim.keymap.set("n", "Q", "<Nop>", opts) -- disable mapping to execute last macro recorded
 
 --- User commands --------------------------------------------------------------
@@ -64,10 +62,10 @@ vim.api.nvim_create_user_command('Darkmode',
       error("Usage: Darkmode on|off")
     end
   end,
-  { nargs = 1,
+  {
+    nargs = 1,
     complete = function(ArgLead, CmdLine, CursorPos)
       return { "on", "off" }
     end
   }
 )
-
