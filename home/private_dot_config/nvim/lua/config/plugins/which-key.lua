@@ -15,7 +15,6 @@ function M.config()
   local mappings = {
     b = { name = "Buffers" },
     bc = { "<cmd>:bd<CR>", "Close" },
-    d = { name = "Diagnostics" },
     f = { name = "Find" },
     w = { name = "Windows" },
     wc = { "<cmd>:close<CR>", "Close" },
