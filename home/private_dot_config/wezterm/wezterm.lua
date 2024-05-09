@@ -34,16 +34,16 @@ config.inactive_pane_hsb = {
 config.disable_default_key_bindings = true
 config.keys = {
   -- Command Palette and DebugOverlay
-  { key = 'p', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateCommandPalette },
-  { key = 'l', mods = 'CTRL|SHIFT', action = wezterm.action.ShowDebugOverlay },
+  { key = 'p',   mods = 'CTRL|SHIFT', action = wezterm.action.ActivateCommandPalette },
+  { key = 'l',   mods = 'CTRL|SHIFT', action = wezterm.action.ShowDebugOverlay },
   -- Copy/Paste
-  { key = 'c', mods = 'CTRL|SHIFT', action = wezterm.action.CopyTo 'Clipboard' },
-  { key = 'v', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
+  { key = 'c',   mods = 'CTRL|SHIFT', action = wezterm.action.CopyTo 'Clipboard' },
+  { key = 'v',   mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
   -- Tabs
-  { key = 't', mods = "CTRL", action = wezterm.action({ SpawnTab = "CurrentPaneDomain"} )},
-  { key = "Tab", mods = "CTRL", action = wezterm.action({ ActivateTabRelative = 1 } )},
+  { key = 't',   mods = "CTRL|SHIFT", action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }) },
+  { key = "Tab", mods = "CTRL|SHIFT", action = wezterm.action({ ActivateTabRelative = 1 }) },
   -- Window
-  { key = "n", mods = "CTRL", action = wezterm.action.SpawnWindow },
+  { key = "n",   mods = "CTRL|SHIFT", action = wezterm.action.SpawnWindow },
 }
 
 -- Misc
