@@ -6,6 +6,7 @@ function M.config()
   require("conform").setup({
     formatters_by_ft = {
       go = { "goimports", "gofumpt" },
+      json = { "jq" },
     },
     format_on_save = {
       lsp_fallback = true,
