@@ -49,7 +49,7 @@ function M.config()
     keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
     if client.supports_method "text/Document/inlayHint" then
-      vim.lsp.inlay_hint.enable(bufnr, true)
+      vim.lsp.inlay_hint.enable(true, { nufnr = bufnr })
     end
   end
 
@@ -66,6 +66,7 @@ function M.config()
     local opts = {
       on_attach = on_attach,
       capabilities = capabilities,
+      inlay_hint = { enabled = false },
     }
     local require_ok, settings = pcall(require, "config.lspsettings." .. server)
     if require_ok then

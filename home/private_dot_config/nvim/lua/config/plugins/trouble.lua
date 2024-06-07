@@ -1,7 +1,9 @@
 local M = {
   'folke/trouble.nvim',
+  opts = {},
   keys = {
-    { "<leader>t", "<cmd>TroubleToggle<CR>", desc = "Open/close trouble list", },
+    { "<leader>dt", "<cmd>Trouble diagnostics toggle<CR>",              desc = "Diagnostics Toggle", },
+    { "<leader>db", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", desc = "Diagnostics Toggle (Buffer)", },
   },
 }
 
